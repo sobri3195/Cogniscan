@@ -14,7 +14,7 @@
     "url": "git+https://github.com/sobri3195/Cogniscan.git"
   },
   "keywords": ["medical", "ai", "rontgen", "ct-scan", "radiology"],
-  "author": "",
+  "author": "Lettu Kes dr. Muhammad Sobri Maulana, S.Kom, CEH, OSCP, OSCE <muhammadsobrimaulana31@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "react": "^18.3.1",

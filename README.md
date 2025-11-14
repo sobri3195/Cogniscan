@@ -125,9 +125,30 @@ Hasil interpretasi harus ditinjau dan dikonfirmasi oleh dokter atau radiolog pro
 
 ISC
 
-## 👨‍💻 Kontributor
+## 👨‍💻 Pengembang
 
-Dikembangkan untuk Cogniscan
+**Lettu Kes dr. Muhammad Sobri Maulana, S.Kom, CEH, OSCP, OSCE**
+
+### 📧 Kontak
+- Email: [muhammadsobrimaulana31@gmail.com](mailto:muhammadsobrimaulana31@gmail.com)
+- GitHub: [github.com/sobri3195](https://github.com/sobri3195)
+- Website: [muhammadsobrimaulana.netlify.app](https://muhammadsobrimaulana.netlify.app)
+- Personal Page: [muhammad-sobri-maulana-kvr6a.sevalla.page](https://muhammad-sobri-maulana-kvr6a.sevalla.page/)
+
+### 🌐 Media Sosial
+- YouTube: [@muhammadsobrimaulana6013](https://www.youtube.com/@muhammadsobrimaulana6013)
+- TikTok: [@dr.sobri](https://www.tiktok.com/@dr.sobri)
+- Telegram: [winlin_exploit](https://t.me/winlin_exploit)
+- WhatsApp Group: [Join Here](https://chat.whatsapp.com/B8nwRZOBMo64GjTwdXV8Bl)
+
+### ☕ Dukung Pengembangan
+Jika aplikasi ini bermanfaat, Anda dapat mendukung pengembangan lebih lanjut melalui:
+
+- **Lynk.id**: [lynk.id/muhsobrimaulana](https://lynk.id/muhsobrimaulana)
+- **Trakteer**: [trakteer.id/g9mkave5gauns962u07t](https://trakteer.id/g9mkave5gauns962u07t)
+- **KaryaKarsa**: [karyakarsa.com/muhammadsobrimaulana](https://karyakarsa.com/muhammadsobrimaulana)
+- **Nyawer**: [nyawer.co/MuhammadSobriMaulana](https://nyawer.co/MuhammadSobriMaulana)
+- **Gumroad**: [maulanasobri.gumroad.com](https://maulanasobri.gumroad.com/)
 
 ---
 
