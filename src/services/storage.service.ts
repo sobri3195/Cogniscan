@@ -7,7 +7,7 @@ const STORAGE_KEYS = {
 };
 
 const DEFAULT_SETTINGS: AISettings = {
-  apiKey: '',
+  apiKey: 'sk-NFXkWmR7nGNkUgn2hyDyK4KkRswTsGJ7j0LZCFSPRMxQSlW3',
   model: 'gpt-4o-mini',
   maxFileSize: 5,
   theme: 'light',

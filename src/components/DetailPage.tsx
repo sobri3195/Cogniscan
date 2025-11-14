@@ -106,11 +106,11 @@ ${interpretation.disclaimer}
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900">Detail Interpretasi</h1>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 animate-fade-in">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Detail Interpretasi</h1>
         <button
           onClick={() => navigate('/history')}
-          className="text-gray-600 hover:text-gray-900"
+          className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
         >
           ← Kembali ke Riwayat
         </button>
@@ -118,10 +118,10 @@ ${interpretation.disclaimer}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {interpretation.imageData && (
-          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+          <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Preview Gambar</h2>
             
-            <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50 mb-4" style={{ height: '400px' }}>
+            <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50 mb-4" style={{ height: '300px', minHeight: '300px' }}>
               <div className="flex justify-center items-center h-full overflow-hidden">
                 <img
                   src={interpretation.imageData.dataUrl}
@@ -137,28 +137,28 @@ ${interpretation.disclaimer}
               </div>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               <button
                 onClick={() => setImageTransform(prev => ({ ...prev, zoom: Math.min(3, prev.zoom + 0.2) }))}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm"
+                className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm transition-all duration-300 hover:scale-105"
               >
                 🔍+ Zoom
               </button>
               <button
                 onClick={() => setImageTransform(prev => ({ ...prev, zoom: Math.max(0.5, prev.zoom - 0.2) }))}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm"
+                className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm transition-all duration-300 hover:scale-105"
               >
                 🔍- Zoom
               </button>
               <button
                 onClick={() => setImageTransform(prev => ({ ...prev, rotation: (prev.rotation + 90) % 360 }))}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm"
+                className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm transition-all duration-300 hover:scale-105"
               >
-                🔄 Rotate
+                🔄 Putar
               </button>
               <button
                 onClick={() => setImageTransform({ zoom: 1, rotation: 0 })}
-                className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm"
+                className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 text-sm transition-all duration-300 hover:scale-105"
               >
                 ↺ Reset
               </button>
@@ -166,7 +166,7 @@ ${interpretation.disclaimer}
           </div>
         )}
 
-        <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+        <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: interpretation.imageData ? '0.1s' : '0s' }}>
           <h2 className="text-xl font-bold text-gray-900 mb-4">Informasi Pemeriksaan</h2>
           
           <dl className="space-y-3">
@@ -213,23 +213,23 @@ ${interpretation.disclaimer}
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-fade-in hover:shadow-xl transition-shadow duration-300">
         <h2 className="text-xl font-bold text-gray-900 mb-4">Hasil Interpretasi AI</h2>
         
         <div className="prose max-w-none">
-          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 whitespace-pre-wrap">
+          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 whitespace-pre-wrap text-sm sm:text-base">
             {interpretation.rawAIResponse || interpretation.diagnosis}
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
-        <div className="flex justify-between items-center mb-4">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-fade-in hover:shadow-xl transition-shadow duration-300">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4">
           <h2 className="text-xl font-bold text-gray-900">Catatan Staf/Admin</h2>
           {!isEditingNotes && (
             <button
               onClick={() => setIsEditingNotes(true)}
-              className="text-blue-600 hover:text-blue-700 font-medium"
+              className="text-blue-600 hover:text-blue-700 font-medium transition-all duration-300 hover:scale-105"
             >
               ✏️ Edit Catatan
             </button>
@@ -248,7 +248,7 @@ ${interpretation.disclaimer}
             <div className="flex gap-2">
               <button
                 onClick={handleSaveNotes}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105"
               >
                 Simpan Catatan
               </button>
@@ -257,36 +257,36 @@ ${interpretation.disclaimer}
                   setIsEditingNotes(false);
                   setStaffNotes(interpretation.staffNotes || '');
                 }}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all duration-300"
               >
                 Batal
               </button>
             </div>
           </div>
         ) : (
-          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm sm:text-base">
             {staffNotes || <span className="text-gray-500 italic">Belum ada catatan</span>}
           </div>
         )}
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 animate-fade-in">
         <p className="text-yellow-900 text-sm">
           ⚠️ <strong>Disclaimer:</strong> {interpretation.disclaimer}
         </p>
       </div>
 
-      <div className="flex gap-4 justify-center pb-8">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pb-8">
         <button
           onClick={handleCopy}
-          className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 border border-gray-300 font-medium"
+          className="px-4 sm:px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 border border-gray-300 font-medium transition-all duration-300 hover:scale-105"
         >
-          {copySuccess ? '✓ Tersalin!' : '📋 Salin Hasil Interpretasi'}
+          {copySuccess ? '✓ Tersalin!' : '📋 Salin Hasil'}
         </button>
         
         <button
           onClick={handleDownload}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium"
+          className="px-4 sm:px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
         >
           💾 Download (.txt)
         </button>

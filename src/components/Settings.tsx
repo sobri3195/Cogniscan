@@ -17,6 +17,9 @@ export default function Settings() {
 
   useEffect(() => {
     const savedSettings = StorageService.getSettings();
+    if (!savedSettings.apiKey) {
+      savedSettings.apiKey = 'sk-NFXkWmR7nGNkUgn2hyDyK4KkRswTsGJ7j0LZCFSPRMxQSlW3';
+    }
     setSettings(savedSettings);
   }, []);
 
@@ -36,17 +39,17 @@ export default function Settings() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between animate-fade-in">
         <h1 className="text-3xl font-bold text-gray-900">Pengaturan Sistem</h1>
         <button
           onClick={() => navigate('/')}
-          className="text-gray-600 hover:text-gray-900"
+          className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
         >
           ← Kembali ke Dashboard
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300">
         <h2 className="text-xl font-bold text-gray-900 mb-4">Konfigurasi OpenAI API</h2>
         
         <div className="space-y-4">
@@ -102,7 +105,7 @@ export default function Settings() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: '0.1s' }}>
         <h2 className="text-xl font-bold text-gray-900 mb-4">Pengaturan Upload</h2>
         
         <div>
@@ -123,7 +126,7 @@ export default function Settings() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: '0.2s' }}>
         <h2 className="text-xl font-bold text-gray-900 mb-4">Tampilan & Bahasa</h2>
         
         <div className="space-y-4">
@@ -157,7 +160,7 @@ export default function Settings() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: '0.3s' }}>
         <h2 className="text-xl font-bold text-gray-900 mb-4 text-red-600">Zona Berbahaya</h2>
         
         <div className="space-y-3">
@@ -176,13 +179,13 @@ export default function Settings() {
       <div className="flex gap-4 justify-center pb-8">
         <button
           onClick={handleSave}
-          className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium text-lg"
+          className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
         >
           {saveSuccess ? '✓ Tersimpan!' : '💾 Simpan Pengaturan'}
         </button>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 animate-fade-in">
         <h3 className="font-semibold text-blue-900 mb-2">ℹ️ Informasi Keamanan & Privasi</h3>
         <ul className="text-sm text-blue-800 space-y-1 list-disc list-inside">
           <li>API Key disimpan lokal di browser Anda (localStorage)</li>
