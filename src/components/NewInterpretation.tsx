@@ -163,17 +163,17 @@ export default function NewInterpretation() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900">Buat Interpretasi Baru</h1>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 animate-fade-in">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Buat Interpretasi Baru</h1>
         <button
           onClick={() => navigate('/')}
-          className="text-gray-600 hover:text-gray-900"
+          className="text-gray-600 hover:text-gray-900 transition-all duration-300 hover:scale-105"
         >
           ← Kembali ke Dashboard
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300">
         <h2 className="text-xl font-bold text-gray-900 mb-4">A. Input Data Pemeriksaan</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -239,7 +239,7 @@ export default function NewInterpretation() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: '0.1s' }}>
         <h2 className="text-xl font-bold text-gray-900 mb-4">B. Upload & Preview Gambar</h2>
         
         <div className="space-y-4">
@@ -253,12 +253,12 @@ export default function NewInterpretation() {
             />
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors font-medium border border-gray-300"
+              className="bg-gray-100 text-gray-700 px-4 sm:px-6 py-3 rounded-lg hover:bg-gray-200 transition-all duration-300 font-medium border border-gray-300 hover:scale-105"
             >
               📁 Pilih Gambar (JPG/PNG)
             </button>
             {imageFile && (
-              <span className="ml-4 text-sm text-gray-600">
+              <span className="ml-2 sm:ml-4 text-xs sm:text-sm text-gray-600 break-all">
                 {imageFile.name} ({(imageFile.size / 1024).toFixed(0)} KB)
               </span>
             )}
@@ -266,7 +266,7 @@ export default function NewInterpretation() {
 
           {imagePreview && (
             <>
-              <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50" style={{ height: '400px' }}>
+              <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50 animate-fade-in" style={{ height: '300px', minHeight: '300px' }}>
                 <div className="flex justify-center items-center h-full overflow-hidden">
                   <img
                     src={imagePreview}
@@ -285,27 +285,27 @@ export default function NewInterpretation() {
               <div className="flex gap-2 flex-wrap">
                 <button
                   onClick={() => handleZoom(0.2)}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300"
+                  className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 transition-all duration-300 hover:scale-105 text-sm"
                 >
-                  🔍+ Zoom In
+                  🔍+ Zoom
                 </button>
                 <button
                   onClick={() => handleZoom(-0.2)}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300"
+                  className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 transition-all duration-300 hover:scale-105 text-sm"
                 >
-                  🔍- Zoom Out
+                  🔍- Zoom
                 </button>
                 <button
                   onClick={handleRotate}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300"
+                  className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 transition-all duration-300 hover:scale-105 text-sm"
                 >
-                  🔄 Rotate
+                  🔄 Putar
                 </button>
                 <button
                   onClick={handleReset}
-                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300"
+                  className="px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg border border-gray-300 transition-all duration-300 hover:scale-105 text-sm"
                 >
-                  ↺ Reset View
+                  ↺ Reset
                 </button>
               </div>
             </>
@@ -313,15 +313,15 @@ export default function NewInterpretation() {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-4 sm:p-6 animate-scale-in hover:shadow-xl transition-shadow duration-300" style={{ animationDelay: '0.2s' }}>
         <h2 className="text-xl font-bold text-gray-900 mb-4">C. Aksi AI</h2>
         
         <div className="space-y-4">
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <button
               onClick={handleCheckQuality}
               disabled={isProcessing || !imageFile}
-              className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium border border-gray-300"
+              className="px-4 sm:px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium border border-gray-300 transition-all duration-300 hover:scale-105"
             >
               🔍 Cek Kualitas Gambar
             </button>
@@ -329,7 +329,7 @@ export default function NewInterpretation() {
             <button
               onClick={handleInterpret}
               disabled={isProcessing || !imageFile}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+              className="px-4 sm:px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               🤖 Interpretasi dengan AI
             </button>
